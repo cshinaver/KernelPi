@@ -1,6 +1,6 @@
 CC = arm-none-eabi-gcc
 KERNEL_NAME = kernel
-MCPU = cortex-a7
+MCPU = cortex-a53
 OBJ_FILES = $(KERNEL_NAME).bin $(KERNEL_NAME).elf boot.o kernel.o
 
 # Copy elf into binary
