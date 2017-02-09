@@ -95,8 +95,10 @@ void uart_init()
 
 	// Divider = 3000000 / (16 * 115200) = 1.627 = ~1.
 	// Fractional part register = (.627 * 64) + 0.5 = 40.6 = ~40.
-	mmio_write(UART0_IBRD, 1);
-	mmio_write(UART0_FBRD, 40);
+	// Divider = 3000000 / (16 * 9600) = 19.53125 = ~19
+	// Fractional part register = (.531 * 64) + 0.5 = 34.484 = 34.
+	mmio_write(UART0_IBRD, 19);
+	mmio_write(UART0_FBRD, 34);
 
 	// Enable FIFO & 8 bit data transmissio (1 stop bit, no parity).
 	mmio_write(UART0_LCRH, (1 << 4) | (1 << 5) | (1 << 6));
