@@ -146,8 +146,9 @@ void kernel_main(uint32_t r0, uint32_t r1, uint32_t atags)
 	(void) atags;
 
 	uart_init();
+	while (true)
 	uart_puts("Hello, kernel World!\r\n");
 
-	while ( true )
-		uart_putc(uart_getc());
+	//while ( true )
+	//	uart_putc(uart_getc());
 }
